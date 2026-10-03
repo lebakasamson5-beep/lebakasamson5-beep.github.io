@@ -1,202 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Lebaka Tsotetsi | ICT Portfolio</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Tsotetsi Lebaka, ICT Applications Development student at Durban University of Technology.">
+  <title>Tsotetsi Lebaka | Applications Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- Navigation -->
-    <header>
-        <nav>
-            <h2>Lebaka <span>Tsotetsi</span></h2>
+<header class="site-header">
+  <nav class="nav">
+    <a href="#home" class="brand">Tsotetsi Lebaka</a>
+    <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<main>
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <p class="hello">Hi, I'm</p>
+      <h1>Tsotetsi Lebaka</h1>
+      <p class="role">Applications developer in training, building web and mobile apps that solve everyday problems.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn" href="#contact">Get in touch</a>
+        <a class="btn" href="cv/Tsotetsi-Lebaka-CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      </div>
+    </div>
+    <aside class="code-card" aria-label="Quick summary">
+      <div class="dots"><span></span><span></span><span></span></div>
+<pre><code><span class="k">const</span> tsotetsi = {
+  <span class="p">studying</span>: <span class="s">"Advanced Diploma in ICT"</span>,
+  <span class="p">at</span>: <span class="s">"Durban University of Technology"</span>,
+  <span class="p">writes</span>: [<span class="s">"C#"</span>, <span class="s">"Python"</span>, <span class="s">"Dart"</span>],
+  <span class="p">builds</span>: [<span class="s">"web"</span>, <span class="s">"mobile"</span>],
+  <span class="p">lookingFor</span>: <span class="s">"entry-level role"</span>
+};</code></pre>
+    </aside>
+  </section>
 
+  <section id="about" class="block">
+    <h2>About me</h2>
+    <div class="about-grid">
+      <p>I am an IT student with a Diploma in ICT (Applications Development) and I am now working towards my Advanced Diploma at Durban University of Technology.</p>
+      <p>I have built a pharmacy management system, a security and emergency mobile app, and a waste management platform. I am looking for an entry-level opportunity where I can apply what I know, gain practical experience and keep growing in the IT field.</p>
+    </div>
+  </section>
 
-    <!-- Home -->
-    <section id="home">
-
+  <section id="skills" class="block tinted">
+    <div class="inner">
+      <h2>Skills</h2>
+      <div class="skill-groups">
         <div>
-            <p>Hello, I am</p>
-
-            <h1>Lebaka <span>Tsotetsi</span></h1>
-
-            <h2>IT Student | Developer</h2>
-
-            <p>
-                Welcome to my personal portfolio website.
-                I am passionate about technology, programming
-                and developing software solutions.
-            </p>
-
-            <a href="#projects">View My Projects</a>
-            <a href="#contact">Contact Me</a>
+          <h3>Programming</h3>
+          <ul class="chips"><li>C#</li><li>Python</li><li>Dart</li><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
         </div>
-
-    </section>
-
-
-    <!-- About -->
-    <section id="about">
-
-        <h2>About Me</h2>
-
-        <p>
-            I am currently studying an Advanced Diploma in
-            Information Technology. I have an interest in
-            programming, software development and modern
-            technology.
-        </p>
-
-    </section>
-
-
-    <!-- Skills -->
-    <section id="skills">
-
-        <h2>My Skills</h2>
-
-        <ul>
-            <li>Flutter</li>
-            <li>Dart</li>
-            <li>Java</li>
-            <li>Python</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Firebase</li>
-            <li>Git & GitHub</li>
-        </ul>
-
-    </section>
-
-
-    <!-- Projects -->
-    <section id="projects">
-
-        <h2>My Projects</h2>
-
         <div>
-
-            <h3>Haba K Shop</h3>
-
-            <p>
-                A shop management system designed to manage
-                products, sales, stock and daily shop operations.
-            </p>
-
+          <h3>Frameworks and tools</h3>
+          <ul class="chips"><li>Flutter</li><li>Firebase</li><li>Git &amp; GitHub</li></ul>
         </div>
-
         <div>
-
-            <h3>Smart shopper</h3>
-
-            <p>
-                My second software development project.
-            </p>
-
+          <h3>Professional</h3>
+          <ul class="chips"><li>Problem solving</li><li>Time management</li><li>Communication</li><li>Cybersecurity awareness</li></ul>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div>
+  <section id="projects" class="block">
+    <h2>Projects</h2>
+    <p class="lead">Each card links to the app, its release or its source code once you add the links in <code>script.js</code>.</p>
+    <div id="project-grid" class="grid"></div>
+  </section>
 
-            <h3>Project 3</h3>
+  <section id="certificates" class="block tinted">
+    <div class="inner">
+      <h2>Certificates</h2>
+      <p class="lead">Select a certificate to view it.</p>
+      <div id="cert-grid" class="grid"></div>
+    </div>
+  </section>
 
-            <p>
-                My third software development project.
-            </p>
+  <section id="education" class="block">
+    <h2>Education</h2>
+    <ol class="timeline">
+      <li>
+        <span class="when">2026 to present</span>
+        <h3>Advanced Diploma in ICT, Applications Development</h3>
+        <p>Durban University of Technology. In progress.</p>
+      </li>
+      <li>
+        <span class="when">2023 to 2025</span>
+        <h3>Diploma in ICT, Applications Development</h3>
+        <p>Durban University of Technology. Completed with 67%.</p>
+      </li>
+    </ol>
+  </section>
 
-        </div>
+  <section id="contact" class="block tinted">
+    <div class="inner">
+      <h2>Contact</h2>
+      <p class="lead">I am open to entry-level opportunities. Send me a message.</p>
+      <ul class="contact-list">
+        <li><a href="mailto:lebakasamson5@gmail.com">lebakasamson5@gmail.com</a></li>
+        <li><a href="https://github.com/lebakasamson5-beep" target="_blank" rel="noopener">GitHub: lebakasamson5-beep</a></li>
+        <li><a href="https://www.linkedin.com/in/lebaka-samson2b96b2295/" target="_blank" rel="noopener">LinkedIn: Lebaka Samson</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
 
-        <div>
+<footer class="site-footer">
+  <p>&copy; 2026 Tsotetsi Lebaka</p>
+</footer>
 
-            <h3>Project 4</h3>
+<!-- Certificate viewer -->
+<div id="viewer" class="viewer" hidden>
+  <div class="viewer-box" role="dialog" aria-modal="true" aria-labelledby="viewer-title">
+    <div class="viewer-bar">
+      <h3 id="viewer-title"></h3>
+      <div>
+        <a id="viewer-open" class="btn small" target="_blank" rel="noopener">Open in new tab</a>
+        <button id="viewer-close" class="btn small" aria-label="Close viewer">Close</button>
+      </div>
+    </div>
+    <div id="viewer-body" class="viewer-body"></div>
+  </div>
+</div>
 
-            <p>
-                My fourth software development project.
-            </p>
-
-        </div>
-
-    </section>
-      <section id="education">
-
-        <h2>Education</h2>
-
-        <h3>Diploma in Information and communication Technology</h3>
-
-        <p>
-            Durban University of Technology (DUT)
-        </p>
-
-        <p>
-            Completed in 2025
-        </p>
-
-    </section>
-
-
-    <!-- Education -->
-    <section id="education">
-
-        <h2>Education</h2>
-
-        <h3>Advanced Diploma in Information Technology</h3>
-
-        <p>
-            Durban University of Technology (DUT)
-        </p>
-
-        <p>
-            Currently studying
-        </p>
-
-    </section>
-
-
-    <!-- Contact -->
-    <section id="contact">
-
-        <h2>Contact Me</h2>
-
-        <p>
-            GitHub:
-            <a href="https://github.com/lebakasamson5-beep">
-                github.com/lebakasamson5-beep
-            </a>
-        </p>
-
-        <p>
-            LinkedIn: Add your LinkedIn profile here
-        </p>
-
-    </section>
-
-
-    <!-- Footer -->
-    <footer>
-
-        <p>
-            © 2026 Lebaka Samson. All rights reserved.
-        </p>
-
-    </footer>
-
+<script src="script.js"></script>
 </body>
-
 </html>
