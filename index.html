@@ -14,7 +14,7 @@
 
 <header class="site-header">
   <nav class="nav">
-    <a href="#home" class="brand">Tsotetsi Lebaka</a>
+    <a href="#home" class="brand"><span class="logo">TL</span>Tsotetsi Lebaka</a>
     <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
@@ -29,18 +29,24 @@
 
 <main>
   <section id="home" class="hero">
-    <div class="hero-text">
-      <p class="hello">Hi, I'm</p>
-      <h1>Tsotetsi Lebaka</h1>
-      <p class="role">Applications developer in training, building web and mobile apps that solve everyday problems.</p>
-      <div class="actions">
-        <a class="btn primary" href="#projects">See my projects</a>
-        <a class="btn" href="#contact">Get in touch</a>
-        <a class="btn" href="cv/Tsotetsi-Lebaka-CV.pdf" target="_blank" rel="noopener">Download CV</a>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="status"><span class="pulse"></span>Open to entry-level opportunities</p>
+        <h1>Tsotetsi Lebaka</h1>
+        <p class="role">Applications developer in training. I build web and mobile apps that solve everyday problems.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">See my projects</a>
+          <a class="btn light" href="#contact">Get in touch</a>
+          <a id="cv-btn" class="btn light" href="cv/Tsotetsi-Lebaka-CV.pdf" target="_blank" rel="noopener" hidden>Download CV</a>
+        </div>
+        <ul class="stats">
+          <li><strong id="stat-projects">3</strong><span>Projects built</span></li>
+          <li><strong id="stat-certs">4</strong><span>Certificates</span></li>
+          <li><strong>2</strong><span>ICT diplomas</span></li>
+        </ul>
       </div>
-    </div>
-    <aside class="code-card" aria-label="Quick summary">
-      <div class="dots"><span></span><span></span><span></span></div>
+      <aside class="code-card" aria-label="Quick summary">
+        <div class="dots"><span></span><span></span><span></span></div>
 <pre><code><span class="k">const</span> tsotetsi = {
   <span class="p">studying</span>: <span class="s">"Advanced Diploma in ICT"</span>,
   <span class="p">at</span>: <span class="s">"Durban University of Technology"</span>,
@@ -48,13 +54,14 @@
   <span class="p">builds</span>: [<span class="s">"web"</span>, <span class="s">"mobile"</span>],
   <span class="p">lookingFor</span>: <span class="s">"entry-level role"</span>
 };</code></pre>
-    </aside>
+      </aside>
+    </div>
   </section>
 
   <section id="about" class="block">
     <h2>About me</h2>
     <div class="about-grid">
-      <p>I am an IT student with a Diploma in ICT (Applications Development) and I am now working towards my Advanced Diploma at Durban University of Technology.</p>
+      <p>I am an IT student with a Diploma in ICT (Applications Development), and I am now working towards my Advanced Diploma at Durban University of Technology.</p>
       <p>I have built a pharmacy management system, a security and emergency mobile app, and a waste management platform. I am looking for an entry-level opportunity where I can apply what I know, gain practical experience and keep growing in the IT field.</p>
     </div>
   </section>
@@ -63,15 +70,15 @@
     <div class="inner">
       <h2>Skills</h2>
       <div class="skill-groups">
-        <div>
+        <div class="skill-box">
           <h3>Programming</h3>
           <ul class="chips"><li>C#</li><li>Python</li><li>Dart</li><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
         </div>
-        <div>
+        <div class="skill-box">
           <h3>Frameworks and tools</h3>
           <ul class="chips"><li>Flutter</li><li>Firebase</li><li>Git &amp; GitHub</li></ul>
         </div>
-        <div>
+        <div class="skill-box">
           <h3>Professional</h3>
           <ul class="chips"><li>Problem solving</li><li>Time management</li><li>Communication</li><li>Cybersecurity awareness</li></ul>
         </div>
@@ -81,7 +88,7 @@
 
   <section id="projects" class="block">
     <h2>Projects</h2>
-    <p class="lead">Each card links to the app, its release or its source code once you add the links in <code>script.js</code>.</p>
+    <p class="lead">Apps I have designed and built. Use the buttons to open an app, download a release or read the code.</p>
     <div id="project-grid" class="grid"></div>
   </section>
 
@@ -113,11 +120,11 @@
     <div class="inner">
       <h2>Contact</h2>
       <p class="lead">I am open to entry-level opportunities. Send me a message.</p>
-      <ul class="contact-list">
-        <li><a href="mailto:lebakasamson5@gmail.com">lebakasamson5@gmail.com</a></li>
-        <li><a href="https://github.com/lebakasamson5-beep" target="_blank" rel="noopener">GitHub: lebakasamson5-beep</a></li>
-        <li><a href="https://www.linkedin.com/in/lebaka-samson2b96b2295/" target="_blank" rel="noopener">LinkedIn: Lebaka Samson</a></li>
-      </ul>
+      <div class="contact-grid">
+        <a class="contact-card" href="mailto:lebakasamson5@gmail.com"><span>Email</span>lebakasamson5@gmail.com</a>
+        <a class="contact-card" href="https://github.com/lebakasamson5-beep" target="_blank" rel="noopener"><span>GitHub</span>lebakasamson5-beep</a>
+        <a class="contact-card" href="https://www.linkedin.com/in/lebaka-samson2b96b2295/" target="_blank" rel="noopener"><span>LinkedIn</span>Lebaka Samson</a>
+      </div>
     </div>
   </section>
 </main>
@@ -133,13 +140,197 @@
       <h3 id="viewer-title"></h3>
       <div>
         <a id="viewer-open" class="btn small" target="_blank" rel="noopener">Open in new tab</a>
-        <button id="viewer-close" class="btn small" aria-label="Close viewer">Close</button>
+        <button id="viewer-close" class="btn small" type="button">Close</button>
       </div>
     </div>
     <div id="viewer-body" class="viewer-body"></div>
   </div>
 </div>
 
-<script src="script.js"></script>
+<script>
+/* ==========================================================
+   EDIT YOUR CONTENT HERE (everything is inside this file, so
+   nothing else needs to be uploaded for it to work)
+
+   PROJECTS:     fill in `live` (app, website or release link)
+                 and `code` (GitHub repo link). "" hides a button.
+   CERTIFICATES: put the file in the "certificates" folder and
+                 write its name in `file` WITHOUT the extension.
+                 PDF, JPG, JPEG and PNG all work.
+   ========================================================== */
+
+var PROJECTS = [
+  {
+    title: "Albert Park Pharmacy System",
+    type: "Web application",
+    description: "A web-based pharmacy management system with features that support pharmacy operations and information management.",
+    tags: ["HTML", "C#"],
+    live: "",
+    code: ""
+  },
+  {
+    title: "Rapid Guard",
+    type: "Mobile application",
+    description: "A Flutter mobile app with features for security and emergency activities, including the interface and core functionality.",
+    tags: ["Flutter", "Dart"],
+    live: "",
+    code: ""
+  },
+  {
+    title: "Waste Wise",
+    type: "Web application",
+    description: "A web-based waste management system with features for better waste management and information handling.",
+    tags: ["Python", "HTML"],
+    live: "",
+    code: ""
+  }
+];
+
+var CERTIFICATES = [
+  { title: "Cybersecurity Essentials", issuer: "Cisco Networking Academy", year: 2023, file: "certificates/cisco-cybersecurity-essentials" },
+  { title: "Full Stack Development", issuer: "FNB App Academy", year: 2025, file: "certificates/fnb-full-stack-development" },
+  { title: "AI and Accessibility", issuer: "Microsoft / Durban University of Technology", year: 2025, file: "certificates/ai-and-accessibility" },
+  { title: "AI Fundamentals", issuer: "Microsoft / Durban University of Technology", year: 2025, file: "certificates/ai-fundamentals" }
+];
+
+/* ==========================================================
+   CODE BELOW: you do not need to change anything
+   ========================================================== */
+(function () {
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text) n.textContent = text;
+    return n;
+  }
+
+  document.getElementById("stat-projects").textContent = PROJECTS.length;
+  document.getElementById("stat-certs").textContent = CERTIFICATES.length;
+
+  /* Projects */
+  var projectGrid = document.getElementById("project-grid");
+  PROJECTS.forEach(function (p) {
+    var card = el("article", "card project");
+    card.appendChild(el("p", "meta", p.type));
+    card.appendChild(el("h3", "", p.title));
+    card.appendChild(el("p", "", p.description));
+    if (p.tags && p.tags.length) {
+      var tags = el("ul", "tags");
+      p.tags.forEach(function (t) { tags.appendChild(el("li", "", t)); });
+      card.appendChild(tags);
+    }
+    var links = el("div", "links");
+    if (p.live) {
+      var a = el("a", "btn small primary", "View app or release");
+      a.href = p.live; a.target = "_blank"; a.rel = "noopener";
+      links.appendChild(a);
+    }
+    if (p.code) {
+      var b = el("a", "btn small", "Source code");
+      b.href = p.code; b.target = "_blank"; b.rel = "noopener";
+      links.appendChild(b);
+    }
+    if (!p.live && !p.code) links.appendChild(el("span", "badge", "Link coming soon"));
+    card.appendChild(links);
+    projectGrid.appendChild(card);
+  });
+
+  /* Certificates */
+  var certGrid = document.getElementById("cert-grid");
+  CERTIFICATES.forEach(function (c) {
+    var card = el("button", "card cert");
+    card.type = "button";
+    card.appendChild(el("p", "meta", String(c.year)));
+    card.appendChild(el("h3", "", c.title));
+    card.appendChild(el("p", "", c.issuer));
+    card.appendChild(el("span", "view", "View certificate"));
+    card.addEventListener("click", function () { openCertificate(c); });
+    certGrid.appendChild(card);
+  });
+
+  /* Find the certificate file whatever its extension is */
+  var EXTENSIONS = [".pdf", ".jpg", ".jpeg", ".png", ".PDF", ".JPG", ".JPEG", ".PNG"];
+  function findFile(base) {
+    if (/\.(pdf|jpe?g|png)$/i.test(base)) base = base.replace(/\.(pdf|jpe?g|png)$/i, "");
+    var i = 0;
+    return new Promise(function (resolve) {
+      (function next() {
+        if (i >= EXTENSIONS.length) return resolve(null);
+        var url = base + EXTENSIONS[i++];
+        fetch(url, { method: "HEAD" }).then(function (r) {
+          if (r.ok) resolve(url); else next();
+        }).catch(next);
+      })();
+    });
+  }
+
+  /* Viewer */
+  var viewer = document.getElementById("viewer");
+  var viewerTitle = document.getElementById("viewer-title");
+  var viewerBody = document.getElementById("viewer-body");
+  var viewerOpen = document.getElementById("viewer-open");
+  var lastFocus = null;
+
+  function clear(node) { while (node.firstChild) node.removeChild(node.firstChild); }
+
+  function openCertificate(c) {
+    lastFocus = document.activeElement;
+    viewerTitle.textContent = c.title;
+    clear(viewerBody);
+    viewerBody.appendChild(el("p", "msg", "Loading..."));
+    viewerOpen.hidden = true;
+    viewer.hidden = false;
+    document.body.style.overflow = "hidden";
+    document.getElementById("viewer-close").focus();
+
+    findFile(c.file).then(function (url) {
+      clear(viewerBody);
+      if (!url) {
+        viewerBody.appendChild(el("p", "msg", "This certificate has not been uploaded yet. Add the file to the certificates folder on GitHub and it will appear here."));
+        return;
+      }
+      viewerOpen.href = url;
+      viewerOpen.hidden = false;
+      if (/\.pdf$/i.test(url)) {
+        var frame = document.createElement("iframe");
+        frame.src = url;
+        frame.title = c.title;
+        viewerBody.appendChild(frame);
+      } else {
+        var img = document.createElement("img");
+        img.src = url;
+        img.alt = "Certificate: " + c.title;
+        viewerBody.appendChild(img);
+      }
+    });
+  }
+
+  function closeViewer() {
+    viewer.hidden = true;
+    clear(viewerBody);
+    document.body.style.overflow = "";
+    if (lastFocus) lastFocus.focus();
+  }
+  document.getElementById("viewer-close").addEventListener("click", closeViewer);
+  viewer.addEventListener("click", function (e) { if (e.target === viewer) closeViewer(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !viewer.hidden) closeViewer(); });
+
+  /* Show the CV button only if the CV file exists */
+  fetch("cv/Tsotetsi-Lebaka-CV.pdf", { method: "HEAD" }).then(function (r) {
+    if (r.ok) document.getElementById("cv-btn").hidden = false;
+  }).catch(function () {});
+
+  /* Mobile menu */
+  var menuBtn = document.querySelector(".menu-btn");
+  var navLinks = document.querySelector(".nav-links");
+  menuBtn.addEventListener("click", function () {
+    var open = navLinks.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", open);
+  });
+  navLinks.addEventListener("click", function (e) {
+    if (e.target.tagName === "A") { navLinks.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); }
+  });
+})();
+</script>
 </body>
 </html>
