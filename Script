@@ -1,0 +1,173 @@
+/* ==========================================================
+   EDIT YOUR CONTENT HERE
+   - Projects: fill in `live` (app, website or release link)
+     and `code` (GitHub repo link). Leave "" to hide a button.
+   - Certificates: put the file in the /certificates folder
+     and set `file` to its name (PDF, JPG or PNG).
+   ========================================================== */
+
+const PROJECTS = [
+  {
+    title: "Albert Park Pharmacy System",
+    type: "Web application",
+    description: "A web-based pharmacy management system with features that support pharmacy operations and information management.",
+    tags: ["HTML", "C#"],
+    live: "",   // e.g. "https://your-site.com"
+    code: ""    // e.g. "https://github.com/lebakasamson5-beep/pharmacy-system"
+  },
+  {
+    title: "Rapid Guard",
+    type: "Mobile application",
+    description: "A Flutter mobile app with features for security and emergency activities, including the interface and core functionality.",
+    tags: ["Flutter", "Dart"],
+    live: "",   // e.g. link to the APK release on GitHub
+    code: ""
+  },
+  {
+    title: "Waste Wise",
+    type: "Web application",
+    description: "A web-based waste management system with features for better waste management and information handling.",
+    tags: ["Python", "HTML"],
+    live: "",
+    code: ""
+  },
+  {
+    title: "Haba K Shop",
+    type: "Shop management system",
+    description: "A shop management system to manage products, sales, stock and daily shop operations.",
+    tags: [],   // add the technologies you used
+    live: "",
+    code: ""
+  },
+  {
+    title: "Smart Shopper",
+    type: "Software project",
+    description: "My second software development project.",   // replace with a real description
+    tags: [],
+    live: "",
+    code: ""
+  }
+];
+
+const CERTIFICATES = [
+  { title: "Cybersecurity Essentials", issuer: "Cisco Networking Academy", year: 2023, file: "certificates/cisco-cybersecurity-essentials.pdf" },
+  { title: "Full Stack Development", issuer: "FNB App Academy", year: 2025, file: "certificates/fnb-full-stack-development.pdf" },
+  { title: "AI and Accessibility", issuer: "Microsoft / Durban University of Technology", year: 2025, file: "certificates/ai-and-accessibility.pdf" },
+  { title: "AI Fundamentals", issuer: "Microsoft / Durban University of Technology", year: 2025, file: "certificates/ai-fundamentals.pdf" },
+  { title: "Diploma in ICT, Applications Development", issuer: "Durban University of Technology", year: 2025, file: "certificates/dut-diploma.pdf" }
+];
+
+/* ==========================================================
+   CODE BELOW: you do not need to change anything
+   ========================================================== */
+
+const el = (tag, cls, text) => {
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (text) n.textContent = text;
+  return n;
+};
+
+/* Projects */
+const projectGrid = document.getElementById("project-grid");
+PROJECTS.forEach(p => {
+  const card = el("article", "card");
+  card.append(el("h3", "", p.title), el("p", "meta", p.type), el("p", "", p.description));
+
+  if (p.tags && p.tags.length) {
+    const tags = el("ul", "tags");
+    p.tags.forEach(t => tags.append(el("li", "", t)));
+    card.append(tags);
+  }
+
+  const links = el("div", "links");
+  if (p.live) {
+    const a = el("a", "btn small primary", "View app or release");
+    a.href = p.live; a.target = "_blank"; a.rel = "noopener";
+    links.append(a);
+  }
+  if (p.code) {
+    const a = el("a", "btn small", "Source code");
+    a.href = p.code; a.target = "_blank"; a.rel = "noopener";
+    links.append(a);
+  }
+  if (!p.live && !p.code) links.append(el("span", "badge", "Link coming soon"));
+  card.append(links);
+  projectGrid.append(card);
+});
+
+/* Certificates */
+const certGrid = document.getElementById("cert-grid");
+CERTIFICATES.forEach(c => {
+  const card = el("button", "card cert");
+  card.type = "button";
+  card.append(
+    el("h3", "", c.title),
+    el("p", "", c.issuer),
+    el("p", "meta", String(c.year)),
+    el("span", "view", "View certificate")
+  );
+  card.addEventListener("click", () => openCertificate(c));
+  certGrid.append(card);
+});
+
+/* Certificate viewer */
+const viewer = document.getElementById("viewer");
+const viewerTitle = document.getElementById("viewer-title");
+const viewerBody = document.getElementById("viewer-body");
+const viewerOpen = document.getElementById("viewer-open");
+let lastFocus = null;
+
+async function openCertificate(c) {
+  lastFocus = document.activeElement;
+  viewerTitle.textContent = c.title;
+  viewerBody.replaceChildren();
+  viewerOpen.href = c.file;
+  viewer.hidden = false;
+  document.body.style.overflow = "hidden";
+  document.getElementById("viewer-close").focus();
+
+  let exists = false;
+  try { exists = (await fetch(c.file, { method: "HEAD" })).ok; } catch (e) { exists = false; }
+
+  if (!exists) {
+    viewerOpen.classList.add("disabled");
+    viewerBody.append(el("p", "msg", "This certificate has not been uploaded yet. Add the file to the certificates folder and it will appear here."));
+    return;
+  }
+  viewerOpen.classList.remove("disabled");
+
+  if (/\.pdf$/i.test(c.file)) {
+    const frame = document.createElement("iframe");
+    frame.src = c.file;
+    frame.title = c.title;
+    viewerBody.append(frame);
+  } else {
+    const img = document.createElement("img");
+    img.src = c.file;
+    img.alt = "Certificate: " + c.title;
+    viewerBody.append(img);
+  }
+}
+
+function closeViewer() {
+  viewer.hidden = true;
+  viewerBody.replaceChildren();
+  document.body.style.overflow = "";
+  if (lastFocus) lastFocus.focus();
+}
+
+document.getElementById("viewer-close").addEventListener("click", closeViewer);
+viewer.addEventListener("click", e => { if (e.target === viewer) closeViewer(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !viewer.hidden) closeViewer(); });
+
+/* Mobile menu */
+const menuBtn = document.querySelector(".menu-btn");
+const navLinks = document.querySelector(".nav-links");
+menuBtn.addEventListener("click", () => {
+  const open = navLinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", open);
+});
+navLinks.addEventListener("click", e => {
+  if (e.target.tagName === "A") { navLinks.classList.remove("open"); menuBtn.setAttribute("aria-expanded", false); }
+});
