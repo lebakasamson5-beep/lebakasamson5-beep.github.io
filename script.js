@@ -11,26 +11,31 @@ var CERT_FOLDER = "certificates";
 
 /* ---------- PROJECTS ---------- */
 var PROJECTS = [
+   { title: "Smart Shopper", type: "web application",
+    description: "My second software development project \u2013 a smart shopping assistant with price comparison and list management.",
+    tags: ["Python", "Flask", "Railway"], live: "https://smartshopper-production-0fd7.up.railway.app/",
+    code: "https://github.com/lebakasamson5-beep/smartshopper", image: "images/smart-shopper.png" },
+   
   { title: "Albert Park Pharmacy System", type: "Web application",
     description: "A web-based pharmacy management system with features that support pharmacy operations and information management.",
     tags: ["HTML", "C#", "Azure","sql database"], live: "https://albert-park-pharmacy.azurewebsites.net",
     code: "https://github.com/lebakasamson5-beep/albert-park-pharmacy", image: "images/pharmacy.png" },
-  { title: "Rapid Guard", type: "Mobile application",
-    description: "A Flutter mobile app with features for security and emergency activities, including the interface and core functionality.",
-    tags: ["Flutter", "Dart", "Firebase"], live: "https://github.com/lebakasamson5-beep/RapidGuard/blob/main/apk/app-release.apk",
-    code: "https://github.com/lebakasamson5-beep/RapidGuard", image: "images/rapid-guard.png" },
+ 
   { title: "Waste Wise", type: "Web application",
     description: "A web-based waste management system with features for better waste management and information handling.",
     tags: ["Python", "HTML", "Railway"], live: "https://waste-wise.up.railway.app",
     code: "https://github.com/HopewellA1/wastewise", image: "images/waste-wise.png" },
-  { title: "Haba K Shop", type: "mobile application",
+   
+  { title: "Haba K Shop", type: "Mobile application",
     description: "A shop management system to manage products, sales, stock and daily shop operations.",
-    tags: ["flutter", "Dart", "Firebase"], live: "https://github.com/lebakasamson5-beep/Haba--k/blob/main/apk/app-release.apk",
+    tags: ["flutter", "Dart", "Firebase"], live:"https://github.com/lebakasamson5-beep/Haba--k/blob/main/apk/app-release.apk",
     code: "https://github.com/lebakasamson5-beep/Haba--K", image: "images/haba-k-shop.png" },
-  { title: "Smart Shopper", type: "web application",
-    description: "My second software development project \u2013 a smart shopping assistant with price comparison and list management.",
-    tags: ["Python", "Flask", "Railway"], live: "https://smartshopper-production-0fd7.up.railway.app/",
-    code: "https://github.com/lebakasamson5-beep/smartshopper", image: "images/smart-shopper.png" },
+   
+    { title: "Rapid Guard", type: "Mobile application",
+    description: "A Flutter mobile app with features for security and emergency activities, including the interface and core functionality.",
+    tags: ["Flutter", "Dart", "Firebase"], live: "https://github.com/lebakasamson5-beep/RapidGuard/blob/main/apk/app-release.apk",
+    code: "https://github.com/lebakasamson5-beep/RapidGuard", image: "images/rapid-guard.png" },
+ 
     { title: "ParkingFinder", type: "Mobile application",
     description: "A mobile application that helps users find available parking spaces quickly and conveniently.",
     tags: ["Flutter", "Dart", "Firebase"], live: "https://github.com/Saziso040831/ParkingFinder/blob/main/apk/app-release.apk",
