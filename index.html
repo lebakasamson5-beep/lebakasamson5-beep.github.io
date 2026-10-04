@@ -28,6 +28,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#qualifications">Qualifications</a></li>
         <li><a href="#certificates">Certificates</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -54,7 +55,7 @@
         </div>
         <ul class="stats fade-in" style="--d:1.5s">
           <li><strong id="stat-projects" data-count="5">0</strong><span>Projects built</span></li>
-          <li><strong id="stat-certs" data-count="5">0</strong><span>Certificates</span></li>
+          <li><strong id="stat-certs" data-count="17">0</strong><span>Certificates</span></li>
           <li><strong data-count="2">0</strong><span>ICT diplomas</span></li>
         </ul>
       </div>
@@ -115,39 +116,56 @@
     <div id="project-grid" class="grid"></div>
   </section>
 
-  <section id="certificates" class="block tinted">
+  <!-- ============ QUALIFICATIONS (new section) ============ -->
+  <section id="qualifications" class="block tinted">
     <div class="inner">
-      <h2 class="reveal">Certificates</h2>
-      <p class="lead reveal">Select a certificate to view or download it. Includes AI, Cisco, FNB, and my completed diploma.</p>
-      <div id="cert-grid" class="grid"></div>
+      <h2 class="reveal">Qualifications</h2>
+      <p class="lead reveal">My formal academic qualification. Click a card to view or download the certificate.</p>
+      <div id="qual-grid" class="grid"></div>
     </div>
   </section>
 
-  <section id="education" class="block">
-    <h2 class="reveal">Education</h2>
-    <ol class="timeline">
-      <li class="reveal">
-        <span class="when">2026 to present</span>
-        <h3>Advanced Diploma in ICT, Applications Development</h3>
-        <p>Durban University of Technology. In progress.</p>
-      </li>
-      <li class="reveal" style="--d:.2s">
-        <span class="when">2023 to 2025</span>
-        <h3>Diploma in ICT, Applications Development</h3>
-        <p>Durban University of Technology. Completed with 67%.</p>
-      </li>
-    </ol>
+  <!-- ============ CERTIFICATES (categorized) ============ -->
+  <section id="certificates" class="block">
+    <h2 class="reveal">Certificates</h2>
+    <p class="lead reveal">Browse by provider. Click a card to view or download it.</p>
+
+    <div class="cert-filters reveal" role="tablist" aria-label="Certificate categories">
+      <button class="filter-btn active" data-filter="mtn" role="tab" aria-selected="true">MTN <span class="count">3</span></button>
+      <button class="filter-btn" data-filter="ai" role="tab" aria-selected="false">AI <span class="count">8</span></button>
+      <button class="filter-btn" data-filter="cisco" role="tab" aria-selected="false">Cisco <span class="count">5</span></button>
+      <button class="filter-btn" data-filter="fnb" role="tab" aria-selected="false">FNB <span class="count">1</span></button>
+      <button class="filter-btn" data-filter="other" role="tab" aria-selected="false">Other <span class="count">0</span></button>
+    </div>
+
+    <div id="cert-grid" class="grid"></div>
   </section>
 
-  <section id="contact" class="block tinted">
+  <section id="education" class="block tinted">
     <div class="inner">
-      <h2 class="reveal">Contact</h2>
-      <p class="lead reveal">I am open to entry-level opportunities. Send me a message.</p>
-      <div class="contact-grid">
-        <a class="contact-card reveal" href="mailto:lebakasamson5@gmail.com"><span>Email</span>lebakasamson5@gmail.com</a>
-        <a class="contact-card reveal" style="--d:.12s" href="https://github.com/lebakasamson5-beep" target="_blank" rel="noopener"><span>GitHub</span>lebakasamson5-beep</a>
-        <a class="contact-card reveal" style="--d:.24s" href="https://www.linkedin.com/in/lebaka-samson2b96b2295/" target="_blank" rel="noopener"><span>LinkedIn</span>Lebaka Samson</a>
-      </div>
+      <h2 class="reveal">Education</h2>
+      <ol class="timeline">
+        <li class="reveal">
+          <span class="when">2026 to present</span>
+          <h3>Advanced Diploma in ICT, Applications Development</h3>
+          <p>Durban University of Technology. In progress.</p>
+        </li>
+        <li class="reveal" style="--d:.2s">
+          <span class="when">2023 to 2025</span>
+          <h3>Diploma in ICT, Applications Development</h3>
+          <p>Durban University of Technology. Completed with 67%.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="contact" class="block">
+    <h2 class="reveal">Contact</h2>
+    <p class="lead reveal">I am open to entry-level opportunities. Send me a message.</p>
+    <div class="contact-grid">
+      <a class="contact-card reveal" href="mailto:lebakasamson5@gmail.com"><span>Email</span>lebakasamson5@gmail.com</a>
+      <a class="contact-card reveal" style="--d:.12s" href="https://github.com/lebakasamson5-beep" target="_blank" rel="noopener"><span>GitHub</span>lebakasamson5-beep</a>
+      <a class="contact-card reveal" style="--d:.24s" href="https://www.linkedin.com/in/lebaka-samson2b96b2295/" target="_blank" rel="noopener"><span>LinkedIn</span>Lebaka Samson</a>
     </div>
   </section>
 </main>
