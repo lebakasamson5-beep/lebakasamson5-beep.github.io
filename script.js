@@ -25,11 +25,11 @@ var PROJECTS = [
     code: "https://github.com/lebakasamson5-beep/waste-wise", image: "images/waste-wise.png" },
   { title: "Haba K Shop", type: "Shop management system",
     description: "A shop management system to manage products, sales, stock and daily shop operations.",
-    tags: ["C#", "SQL", "Azure"], live: "https://habak-shop.azurewebsites.net",
+    tags: ["flutter", "Dart", "Firebase"], live: "https://habak-shop.azurewebsites.net",
     code: "https://github.com/lebakasamson5-beep/haba-k-shop", image: "images/haba-k-shop.png" },
   { title: "Smart Shopper", type: "Software project",
     description: "My second software development project \u2013 a smart shopping assistant with price comparison and list management.",
-    tags: ["Python", "Flask", "Render"], live: "https://smart-shopper.onrender.com",
+    tags: ["Python", "Flask", "Railway"], live: "https://smartshopper-production-0fd7.up.railway.app/",
     code: "https://github.com/lebakasamson5-beep/smart-shopper", image: "images/smart-shopper.png" }
 ];
 
