@@ -141,8 +141,8 @@ main, .site-footer { position: relative; z-index: 1; }
 .cert .icon { font-size: 30px; }
 #qual-grid .card { border-color: color-mix(in srgb, var(--amber) 45%, var(--line)); }
 /* the whole card is clickable through one real button */
-.card > .view-btn { position: static; background: none; border: 0; color: var(--cyan); font: 600 17px "Source Sans 3", sans-serif; text-align: left; margin-top: auto; padding: 10px 0 0; cursor: pointer; transition: letter-spacing 0.3s; }
-.cert:hover .view-btn { letter-spacing: 0.04em; }
+.card > .view-btn { position: static; align-self: flex-start; margin-top: auto; background: var(--blue); color: #fff; border: 0; border-radius: 10px; padding: 9px 20px; font: 600 16px "Source Sans 3", sans-serif; cursor: pointer; box-shadow: 0 6px 18px rgba(77,124,255,0.35); transition: filter 0.2s, transform 0.2s, box-shadow 0.2s; }
+.cert:hover .view-btn { filter: brightness(1.12); transform: translateY(-2px); box-shadow: 0 10px 24px rgba(77,124,255,0.5); }
 .view-btn::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }
 .view-btn:focus-visible { outline: none; }
 .view-btn:focus-visible::after { outline: 3px solid var(--amber); outline-offset: 2px; }
