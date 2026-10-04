@@ -54,8 +54,8 @@ var QUALIFICATIONS = [
    It then appears automatically. Add a line below only if you want a custom title or year. */
 var CATEGORIES = [["mtn", "MTN"], ["ai", "AI"], ["cisco", "Cisco"], ["fnb", "FNB"], ["other", "Other"]];
 var CERTIFICATES = [
-  { title: "MTN Skills Academy \u2013 Internet Fundamentals",       issuer: "MTN", year: 2026, provider: "mtn", file: "certificates/Internet_Fundamental_mtn.pdf" },
-  { title: "MTN Skills Academy \u2013 Internet Search and beyond",       issuer: "MTN", year: 2026, provider: "mtn", file: "certificates/Internet_Search_mtn.pdf" },
+  { title: "MTN Skills Academy \u2013 Internet Fundamentals",issuer: "MTN", year: 2026, provider: "mtn", file: "certificates/Internet_Fundamental_mtn.pdf" },
+  { title: "MTN Skills Academy \u2013 Internet Search and beyond",issuer: "MTN", year: 2026, provider: "mtn", file: "certificates/Internet_Search_mtn.pdf" },
   { title: "MTN Skills Academy \u2013 Boost Your Productivity with Copilot", issuer: "MTN", year: 2026, provider: "mtn", file: "certificates/mtn.pdf" },
  { title: "MTN Skills Academy \u2013 AI for all", issuer: "MTN", year: 2026, provider: "mtn", file: "certificates/AI_for_all_Certificate.pdf" },
    
