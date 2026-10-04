@@ -1,218 +1,174 @@
-:root {
-  --bg: #070b16;
-  --bg2: #0c1325;
-  --card: rgba(255,255,255,0.045);
-  --card-solid: #111a30;
-  --line: rgba(255,255,255,0.1);
-  --text: #e8eefb;
-  --muted: #9aa9c4;
-  --blue: #4d7cff;
-  --cyan: #22d3ee;
-  --amber: #ffb020;
-  --grad: linear-gradient(120deg, #4d7cff, #22d3ee);
-  --radius: 16px;
-}
-[data-theme="light"] {
-  --bg: #f4f7fc;
-  --bg2: #e8eef7;
-  --card: #ffffff;
-  --card-solid: #ffffff;
-  --line: #d6deea;
-  --text: #0e1b2c;
-  --muted: #55657a;
-  --blue: #2f5bff;
-  --cyan: #0891b2;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Tsotetsi Lebaka, ICT Applications Development student at Durban University of Technology.">
+  <title>Tsotetsi Lebaka | Applications Developer</title>
+  <script>
+    document.documentElement.classList.add("js");
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-blur" aria-hidden="true"></div>
+<div id="progress"></div>
+<div id="glow"></div>
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-body { font-family: "Source Sans 3", system-ui, sans-serif; font-size: 18px; line-height: 1.65; color: var(--text); background: var(--bg); overflow-x: hidden; transition: background 0.4s, color 0.4s; }
-h1, h2, h3, .brand { font-family: "Bricolage Grotesque", system-ui, sans-serif; line-height: 1.15; }
-a { color: var(--cyan); }
-[hidden] { display: none !important; }
-:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
-::selection { background: var(--blue); color: #fff; }
+<header class="site-header">
+  <nav class="nav">
+    <a href="#home" class="brand"><span class="logo">TL</span>Tsotetsi Lebaka</a>
+    <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="theme" class="icon-btn" type="button" aria-label="Switch light or dark theme">&#9788;</button>
+    </div>
+  </nav>
+</header>
 
-/* Blurred background image on the right */
-.bg-blur {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 45%;
-  height: 100%;
-  background-image: url('images/profile.jpg');
-  background-size: cover;
-  background-position: center right;
-  filter: blur(18px) brightness(0.4);
-  opacity: 0.25;
-  z-index: 0;
-  pointer-events: none;
-  transition: opacity 0.5s;
-}
-[data-theme="light"] .bg-blur { opacity: 0.12; filter: blur(22px) brightness(0.9); }
-main, .site-footer { position: relative; z-index: 1; }
+<main>
+  <section id="home" class="hero">
+    <canvas id="net" aria-hidden="true"></canvas>
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="status fade-in" style="--d:.1s"><span class="pulse"></span>Open to entry-level opportunities</p>
+        <h1 id="name" aria-label="Tsotetsi Lebaka">Tsotetsi Lebaka</h1>
+        <p class="typed-line fade-in" style="--d:.9s"><span id="typed"></span><span class="cursor"></span></p>
+        <p class="role fade-in" style="--d:1.1s">I build web and mobile apps that solve everyday problems, and I am looking for a team where I can keep learning.</p>
+        <div class="actions fade-in" style="--d:1.3s">
+          <a class="btn primary" href="#projects">See my projects</a>
+          <a class="btn" href="#contact">Get in touch</a>
+          <a id="cv-btn" class="btn" href="cv/Tsotetsi-Lebaka-CV.pdf" target="_blank" rel="noopener" hidden>Download CV</a>
+        </div>
+        <ul class="stats fade-in" style="--d:1.5s">
+          <li><strong id="stat-projects" data-count="5">0</strong><span>Projects built</span></li>
+          <li><strong id="stat-certs" data-count="5">0</strong><span>Certificates</span></li>
+          <li><strong data-count="2">0</strong><span>ICT diplomas</span></li>
+        </ul>
+      </div>
+      <aside class="code-card fade-in" style="--d:.8s" aria-label="Quick summary">
+        <div class="dots"><span></span><span></span><span></span></div>
+<pre><code><span class="k">const</span> tsotetsi = {
+  <span class="p">studying</span>: <span class="s">"Advanced Diploma in ICT"</span>,
+  <span class="p">at</span>: <span class="s">"Durban University of Technology"</span>,
+  <span class="p">writes</span>: [<span class="s">"C#"</span>, <span class="s">"Python"</span>, <span class="s">"Dart"</span>],
+  <span class="p">builds</span>: [<span class="s">"web"</span>, <span class="s">"mobile"</span>],
+  <span class="p">platforms</span>: [<span class="s">"Render"</span>, <span class="s">"Railway"</span>, <span class="s">"Azure"</span>],
+  <span class="p">lookingFor</span>: <span class="s">"entry-level role"</span>
+};</code></pre>
+      </aside>
+    </div>
+    <span class="scroll-hint" aria-hidden="true"></span>
+  </section>
 
-/* Scroll progress + cursor glow */
-#progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--grad); z-index: 200; }
-#glow { position: fixed; width: 520px; height: 520px; margin: -260px 0 0 -260px; border-radius: 50%; pointer-events: none; z-index: 0; background: radial-gradient(circle, rgba(77,124,255,0.16), transparent 65%); transition: opacity 0.3s; opacity: 0; }
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marquee"></div>
+  </div>
 
-/* Header */
-.site-header { position: sticky; top: 0; z-index: 100; background: color-mix(in srgb, var(--bg) 78%, transparent); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
-.nav { max-width: 1160px; margin: auto; padding: 12px 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
-.brand { color: var(--text); text-decoration: none; font-weight: 800; font-size: 20px; display: flex; align-items: center; gap: 10px; }
-.logo { display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--grad); color: #fff; font-size: 14px; transition: transform 0.5s; }
-.brand:hover .logo { transform: rotate(360deg); }
-.nav-right { display: flex; align-items: center; gap: 22px; }
-.nav-links { list-style: none; display: flex; gap: 6px; }
-.nav-links a { color: var(--muted); text-decoration: none; font-size: 16px; padding: 6px 12px; border-radius: 999px; transition: color 0.2s, background 0.2s; }
-.nav-links a:hover { color: var(--text); }
-.nav-links a.active { color: var(--text); background: var(--card); box-shadow: inset 0 0 0 1px var(--line); }
-.icon-btn { background: var(--card); border: 1px solid var(--line); color: var(--text); width: 38px; height: 38px; border-radius: 50%; cursor: pointer; font-size: 17px; transition: transform 0.3s; }
-.icon-btn:hover { transform: rotate(25deg) scale(1.1); }
-.menu-btn { display: none; background: none; border: 1px solid var(--line); color: var(--text); padding: 6px 14px; border-radius: 8px; font: inherit; cursor: pointer; }
+  <section id="about" class="block">
+    <h2 class="reveal">About me</h2>
+    <div class="about-grid">
+      <p class="reveal">I am an IT student with a Diploma in ICT (Applications Development), and I am now working towards my Advanced Diploma at Durban University of Technology.</p>
+      <p class="reveal" style="--d:.15s">I have built a pharmacy management system, a security and emergency mobile app, and a waste management platform. I am looking for an entry-level opportunity where I can apply what I know, gain practical experience and keep growing in the IT field.</p>
+    </div>
+  </section>
 
-/* Hero */
-.hero { position: relative; overflow: hidden; min-height: calc(100vh - 62px); display: flex; align-items: center; }
-#net { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
-.blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.45; z-index: 0; animation: drift 14s ease-in-out infinite alternate; }
-.b1 { width: 420px; height: 420px; background: #4d7cff; top: -120px; right: -80px; }
-.b2 { width: 340px; height: 340px; background: #22d3ee; bottom: -140px; left: -80px; animation-delay: -5s; opacity: 0.28; }
-.b3 { width: 260px; height: 260px; background: #ffb020; top: 40%; left: 45%; animation-delay: -9s; opacity: 0.12; }
-@keyframes drift { to { transform: translate(60px, 40px) scale(1.15); } }
-.hero-inner { position: relative; z-index: 1; max-width: 1160px; margin: auto; padding: 80px 28px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center; width: 100%; }
-.status { display: inline-flex; align-items: center; gap: 10px; font-size: 16px; color: var(--muted); border: 1px solid var(--line); background: var(--card); padding: 5px 16px; border-radius: 999px; margin-bottom: 22px; }
-.pulse { width: 9px; height: 9px; border-radius: 50%; background: #3ddc97; animation: pulse 2s infinite; }
-@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(61,220,151,0.6); } 70%, 100% { box-shadow: 0 0 0 10px rgba(61,220,151,0); } }
-.hero h1 { font-size: clamp(46px, 7.4vw, 88px); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 14px; display: flex; flex-wrap: wrap; column-gap: 0.28em; }
-.word { display: inline-flex; overflow: hidden; padding-bottom: 0.08em; }
-.char { display: inline-block; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; transform: translateY(110%); animation: rise 0.8s cubic-bezier(.2,.8,.2,1) forwards; animation-delay: calc(var(--i) * 45ms + 250ms); }
-@keyframes rise { to { transform: none; } }
-.typed-line { font: 700 clamp(22px, 3vw, 30px) "Bricolage Grotesque", sans-serif; margin-bottom: 16px; min-height: 1.4em; }
-.cursor { display: inline-block; width: 3px; height: 1em; background: var(--amber); margin-left: 4px; vertical-align: -0.12em; animation: blink 1s steps(1) infinite; }
-@keyframes blink { 50% { opacity: 0; } }
-.role { max-width: 38ch; font-size: 20px; color: var(--muted); margin-bottom: 30px; }
-.fade-in { opacity: 0; animation: fadeUp 0.8s ease forwards; animation-delay: var(--d, 0.2s); }
-@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
-.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 44px; }
-.btn { display: inline-block; padding: 11px 24px; border-radius: 10px; border: 1.5px solid var(--line); color: var(--text); background: var(--card); text-decoration: none; font: 600 16px "Source Sans 3", sans-serif; cursor: pointer; transition: transform 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.2s; }
-.btn:hover { transform: translateY(-2px); border-color: var(--blue); }
-.btn.primary { background: var(--grad); border-color: transparent; color: #fff; box-shadow: 0 8px 24px rgba(77,124,255,0.35); }
-.btn.primary:hover { box-shadow: 0 12px 32px rgba(77,124,255,0.55); }
-.btn.small { padding: 6px 14px; font-size: 15px; }
-.stats { list-style: none; display: flex; gap: 44px; flex-wrap: wrap; }
-.stats strong { display: block; font: 800 36px "Bricolage Grotesque", sans-serif; color: var(--amber); }
-.stats span { font-size: 15px; color: var(--muted); }
-.code-card { background: color-mix(in srgb, var(--card-solid) 88%, transparent); border: 1px solid var(--line); backdrop-filter: blur(10px); color: var(--text); border-radius: 18px; padding: 20px 24px 26px; box-shadow: 0 30px 70px rgba(0,0,0,0.4); animation: float 6s ease-in-out infinite; }
-@keyframes float { 50% { transform: translateY(-14px) rotate(-1deg); } }
-.dots { display: flex; gap: 7px; margin-bottom: 16px; }
-.dots span:nth-child(1) { background: #ff5f57; } .dots span:nth-child(2) { background: #febc2e; } .dots span:nth-child(3) { background: #28c840; }
-.dots span { width: 11px; height: 11px; border-radius: 50%; }
-.code-card pre { font: 15px/1.75 ui-monospace, Menlo, Consolas, monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
-.code-card code { background: none; padding: 0; font: inherit; }
-.k { color: #8aa8ff; } .p { color: #ffd37a; } .s { color: #8fe3b4; }
-.scroll-hint { position: absolute; bottom: 22px; left: 50%; width: 24px; height: 40px; border: 2px solid var(--line); border-radius: 14px; z-index: 1; }
-.scroll-hint::after { content: ""; position: absolute; left: 50%; top: 7px; width: 4px; height: 8px; margin-left: -2px; border-radius: 2px; background: var(--amber); animation: wheel 1.8s infinite; }
-@keyframes wheel { to { transform: translateY(14px); opacity: 0; } }
+  <section id="skills" class="block tinted">
+    <div class="inner">
+      <h2 class="reveal">Skills &amp; Platforms</h2>
+      <div class="skill-groups">
+        <div class="skill-box reveal">
+          <h3>Programming</h3>
+          <ul class="chips"><li>C#</li><li>Python</li><li>Dart</li><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+        </div>
+        <div class="skill-box reveal" style="--d:.15s">
+          <h3>Frameworks &amp; Tools</h3>
+          <ul class="chips"><li>Flutter</li><li>Firebase</li><li>Git &amp; GitHub</li></ul>
+        </div>
+        <div class="skill-box reveal" style="--d:.3s">
+          <h3>Cloud &amp; Deployment</h3>
+          <ul class="chips"><li>Render</li><li>Railway</li><li>Azure</li><li>Vercel</li><li>Netlify</li></ul>
+        </div>
+        <div class="skill-box reveal" style="--d:.45s">
+          <h3>Professional</h3>
+          <ul class="chips"><li>Problem solving</li><li>Time management</li><li>Communication</li><li>Cybersecurity awareness</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-/* Marquee */
-.marquee { overflow: hidden; border-block: 1px solid var(--line); background: var(--bg2); padding: 16px 0; }
-.marquee-track { display: flex; gap: 48px; width: max-content; animation: scroll 28s linear infinite; }
-.marquee:hover .marquee-track { animation-play-state: paused; }
-.marquee span { font: 700 22px "Bricolage Grotesque", sans-serif; color: var(--muted); white-space: nowrap; }
-.marquee span::after { content: "\2726"; margin-left: 48px; color: var(--amber); }
-@keyframes scroll { to { transform: translateX(-50%); } }
+  <section id="projects" class="block">
+    <h2 class="reveal">Projects</h2>
+    <p class="lead reveal">Apps I have designed and built. Use the buttons to open an app, download a release or read the code.</p>
+    <div id="project-grid" class="grid"></div>
+  </section>
 
-/* Sections */
-.block { max-width: 1160px; margin: auto; padding: 96px 28px; }
-.block.tinted { max-width: none; background: var(--bg2); padding: 0; }
-.tinted .inner { max-width: 1160px; margin: auto; padding: 96px 28px; }
-.block h2 { font-size: clamp(32px, 4.4vw, 46px); font-weight: 800; margin-bottom: 22px; position: relative; padding-bottom: 16px; }
-.block h2::after { content: ""; position: absolute; left: 0; bottom: 0; width: 64px; height: 4px; border-radius: 4px; background: var(--grad); transition: width 0.8s 0.3s; }
-.js .block h2:not(.in)::after { width: 0; }
-.lead { color: var(--muted); max-width: 60ch; margin-bottom: 32px; }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; max-width: 1000px; margin-top: 10px; color: var(--muted); font-size: 19px; }
+  <section id="certificates" class="block tinted">
+    <div class="inner">
+      <h2 class="reveal">Certificates</h2>
+      <p class="lead reveal">Select a certificate to view or download it. Includes AI, Cisco, FNB, and my completed diploma.</p>
+      <div id="cert-grid" class="grid"></div>
+    </div>
+  </section>
 
-/* Reveal on scroll */
-.js .reveal { opacity: 0; translate: 0 34px; transition: opacity 0.8s ease, translate 0.8s cubic-bezier(.2,.8,.2,1); transition-delay: var(--d, 0s); }
-.js .reveal.in { opacity: 1; translate: 0 0; }
+  <section id="education" class="block">
+    <h2 class="reveal">Education</h2>
+    <ol class="timeline">
+      <li class="reveal">
+        <span class="when">2026 to present</span>
+        <h3>Advanced Diploma in ICT, Applications Development</h3>
+        <p>Durban University of Technology. In progress.</p>
+      </li>
+      <li class="reveal" style="--d:.2s">
+        <span class="when">2023 to 2025</span>
+        <h3>Diploma in ICT, Applications Development</h3>
+        <p>Durban University of Technology. Completed with 67%.</p>
+      </li>
+    </ol>
+  </section>
 
-/* Skills */
-.skill-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; margin-top: 24px; }
-.skill-box { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
-.skill-box h3 { font-size: 20px; margin-bottom: 16px; }
-.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
-.chips li { background: color-mix(in srgb, var(--blue) 14%, transparent); border: 1px solid color-mix(in srgb, var(--blue) 35%, transparent); padding: 4px 14px; border-radius: 999px; font-size: 16px; font-weight: 600; transition: transform 0.2s, background 0.2s; }
-.chips li:hover { transform: translateY(-3px) scale(1.06); background: var(--blue); color: #fff; }
-.js .chips li { opacity: 0; scale: 0.6; transition: opacity 0.5s, scale 0.5s cubic-bezier(.3,1.6,.5,1), transform 0.2s, background 0.2s; transition-delay: calc(var(--c) * 70ms), calc(var(--c) * 70ms), 0s, 0s; }
-.js .reveal.in .chips li { opacity: 1; scale: 1; }
+  <section id="contact" class="block tinted">
+    <div class="inner">
+      <h2 class="reveal">Contact</h2>
+      <p class="lead reveal">I am open to entry-level opportunities. Send me a message.</p>
+      <div class="contact-grid">
+        <a class="contact-card reveal" href="mailto:lebakasamson5@gmail.com"><span>Email</span>lebakasamson5@gmail.com</a>
+        <a class="contact-card reveal" style="--d:.12s" href="https://github.com/lebakasamson5-beep" target="_blank" rel="noopener"><span>GitHub</span>lebakasamson5-beep</a>
+        <a class="contact-card reveal" style="--d:.24s" href="https://www.linkedin.com/in/lebaka-samson2b96b2295/" target="_blank" rel="noopener"><span>LinkedIn</span>Lebaka Samson</a>
+      </div>
+    </div>
+  </section>
+</main>
 
-/* Cards */
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
-.card { position: relative; overflow: hidden; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; gap: 10px; transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform 0.15s ease-out, border-color 0.3s, box-shadow 0.3s; transform-style: preserve-3d; }
-.card::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 0%), rgba(77,124,255,0.22), transparent 70%); opacity: 0; transition: opacity 0.3s; }
-.card:hover { border-color: color-mix(in srgb, var(--blue) 70%, transparent); box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
-.card:hover::before { opacity: 1; }
-.card > * { position: relative; }
-.card h3 { font-size: 23px; }
-.card p { color: var(--muted); font-size: 17px; }
-.card .meta { font-size: 14px; font-weight: 600; color: var(--cyan); }
-.card .project-img { width: 100%; height: 160px; object-fit: cover; border-radius: 12px; margin-bottom: 10px; background: var(--bg2); }
-.tags { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
-.tags li { font-size: 14px; background: var(--card); border: 1px solid var(--line); padding: 2px 10px; border-radius: 6px; }
-.links { margin-top: auto; padding-top: 14px; display: flex; flex-wrap: wrap; gap: 10px; }
-.cert { cursor: pointer; text-align: left; font: inherit; color: inherit; }
-.cert .icon { font-size: 30px; }
-.cert .view { color: var(--cyan); font-weight: 600; margin-top: auto; padding-top: 10px; transition: letter-spacing 0.3s; }
-.cert:hover .view { letter-spacing: 0.04em; }
-.badge { font-size: 14px; font-weight: 600; background: rgba(255,176,32,0.15); color: var(--amber); padding: 2px 12px; border-radius: 6px; }
+<footer class="site-footer"><p>&copy; 2026 Tsotetsi Lebaka</p></footer>
+<button id="top" class="icon-btn" type="button" aria-label="Back to top">&uarr;</button>
 
-/* Timeline */
-.timeline { list-style: none; position: relative; margin-left: 8px; padding-left: 34px; max-width: 760px; display: grid; gap: 38px; margin-top: 10px; }
-.timeline::before { content: ""; position: absolute; left: 0; top: 6px; bottom: 6px; width: 3px; background: var(--grad); transform-origin: top; transform: scaleY(var(--grow, 1)); border-radius: 3px; }
-.timeline li { position: relative; }
-.timeline li::before { content: ""; position: absolute; left: -43px; top: 8px; width: 17px; height: 17px; border-radius: 50%; background: var(--bg); border: 4px solid var(--cyan); }
-.timeline .when { font-weight: 600; color: var(--cyan); }
-.timeline h3 { font-size: 23px; margin: 2px 0 4px; }
-.timeline p { color: var(--muted); }
+<!-- Certificate viewer -->
+<div id="viewer" class="viewer" hidden>
+  <div class="viewer-box" role="dialog" aria-modal="true" aria-labelledby="viewer-title">
+    <div class="viewer-bar">
+      <h3 id="viewer-title"></h3>
+      <div>
+        <a id="viewer-open" class="btn small" target="_blank" rel="noopener" download>Download / Open</a>
+        <button id="viewer-close" class="btn small" type="button">Close</button>
+      </div>
+    </div>
+    <div id="viewer-body" class="viewer-body"></div>
+  </div>
+</div>
 
-/* Contact */
-.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
-.contact-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; text-decoration: none; color: var(--text); font-weight: 600; font-size: 19px; overflow-wrap: anywhere; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
-.contact-card:hover { border-color: var(--cyan); transform: translateY(-5px); box-shadow: 0 16px 36px rgba(34,211,238,0.15); }
-.contact-card span { display: block; font-size: 14px; font-weight: 600; color: var(--cyan); }
-
-.site-footer { background: var(--bg); border-top: 1px solid var(--line); color: var(--muted); text-align: center; padding: 28px; font-size: 15px; }
-#top { position: fixed; right: 22px; bottom: 22px; z-index: 90; opacity: 0; pointer-events: none; transform: translateY(14px); transition: opacity 0.3s, transform 0.3s; background: var(--grad); color: #fff; border: 0; }
-#top.show { opacity: 1; pointer-events: auto; transform: none; }
-
-/* Certificate viewer */
-.viewer { position: fixed; inset: 0; background: rgba(4, 8, 18, 0.85); backdrop-filter: blur(6px); z-index: 300; display: flex; align-items: center; justify-content: center; padding: 20px; animation: fade 0.25s; }
-.viewer-box { background: var(--card-solid); border: 1px solid var(--line); width: min(1000px, 100%); height: min(88vh, 900px); border-radius: 16px; display: flex; flex-direction: column; overflow: hidden; animation: pop 0.35s cubic-bezier(.2,.9,.3,1.2); }
-@keyframes fade { from { opacity: 0; } }
-@keyframes pop { from { opacity: 0; transform: scale(0.92) translateY(20px); } }
-.viewer-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 18px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
-.viewer-bar h3 { font-size: 18px; }
-.viewer-bar div { display: flex; gap: 8px; }
-.viewer-body { flex: 1; overflow: auto; display: flex; align-items: center; justify-content: center; background: var(--bg2); }
-.viewer-body iframe { width: 100%; height: 100%; border: 0; background: #fff; }
-.viewer-body img { max-width: 100%; max-height: 100%; object-fit: contain; }
-.viewer-body .msg { padding: 30px; text-align: center; color: var(--muted); max-width: 44ch; }
-
-/* Mobile */
-@media (max-width: 900px) {
-  .bg-blur { width: 100%; opacity: 0.12; }
-  .hero-inner { grid-template-columns: 1fr; padding-top: 50px; gap: 44px; }
-  .scroll-hint { display: none; }
-  .about-grid { grid-template-columns: 1fr; gap: 16px; }
-  .menu-btn { display: block; }
-  .nav-right { width: 100%; flex-direction: column; align-items: flex-start; gap: 10px; display: none; }
-  .nav-right.open { display: flex; }
-  .nav-links { flex-direction: column; width: 100%; }
-  .block, .tinted .inner { padding-top: 64px; padding-bottom: 64px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation: none !important; transition: none !important; }
-  .char { transform: none; } .fade-in { opacity: 1; }
-  .js .reveal, .js .chips li { opacity: 1; translate: 0 0; scale: 1; }
-}
+<script src="script.js"></script>
+</body>
+</html>
