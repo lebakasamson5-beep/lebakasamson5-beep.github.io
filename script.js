@@ -23,11 +23,11 @@ var PROJECTS = [
     description: "A web-based waste management system with features for better waste management and information handling.",
     tags: ["Python", "HTML", "Railway"], live: "https://waste-wise.up.railway.app",
     code: "https://github.com/HopewellA1/wastewise", image: "images/waste-wise.png" },
-  { title: "Haba K Shop", type: "Shop management system",
+  { title: "Haba K Shop", type: "mobile application",
     description: "A shop management system to manage products, sales, stock and daily shop operations.",
     tags: ["flutter", "Dart", "Firebase"], live: "https://github.com/lebakasamson5-beep/Haba--k/blob/main/apk/app-release.apk",
     code: "https://github.com/lebakasamson5-beep/Haba--K", image: "images/haba-k-shop.png" },
-  { title: "Smart Shopper", type: "Software project",
+  { title: "Smart Shopper", type: "web application",
     description: "My second software development project \u2013 a smart shopping assistant with price comparison and list management.",
     tags: ["Python", "Flask", "Railway"], live: "https://smartshopper-production-0fd7.up.railway.app/",
     code: "https://github.com/lebakasamson5-beep/smartshopper", image: "images/smart-shopper.png" },
@@ -49,24 +49,25 @@ var QUALIFICATIONS = [
    It then appears automatically. Add a line below only if you want a custom title or year. */
 var CATEGORIES = [["mtn", "MTN"], ["ai", "AI"], ["cisco", "Cisco"], ["fnb", "FNB"], ["other", "Other"]];
 var CERTIFICATES = [
-  { title: "MTN Skills Academy \u2013 Digital Skills",       issuer: "MTN", year: 2025, provider: "mtn", file: "certificates/mtn-digital-skills.pdf" },
-  { title: "MTN Skills Academy \u2013 Data Analytics",       issuer: "MTN", year: 2025, provider: "mtn", file: "certificates/mtn-data-analytics.pdf" },
-  { title: "MTN Skills Academy \u2013 Cybersecurity Basics", issuer: "MTN", year: 2025, provider: "mtn", file: "certificates/mtn-cybersecurity-basics.pdf" },
-
+  { title: "MTN Skills Academy \u2013 Internet Fundamentals",       issuer: "MTN", year: 2026, provider: "mtn", file: "certificates/Internet_Fundamental_mtn.pdf" },
+  { title: "MTN Skills Academy \u2013 Internet Search and beyond",       issuer: "MTN", year: 2026, provider: "mtn", file: "certificates/Internet_Search_mtn.pdf" },
+  { title: "MTN Skills Academy \u2013 Boost Your Productivity with Copilot", issuer: "MTN", year: 2026, provider: "mtn", file: "certificates/mtn.pdf" },
+ { title: "MTN Skills Academy \u2013 AI for all", issuer: "MTN", year: 2026, provider: "mtn", file: "certificates/AI_for_all_Certificate.pdf" },
+   
   { title: "AI and Accessibility",          issuer: "Microsoft / DUT", year: 2025, provider: "ai", file: "certificates/ai-and-accessibility.pdf" },
   { title: "AI Fundamentals",               issuer: "Microsoft / DUT", year: 2025, provider: "ai", file: "certificates/ai-fundamentals.pdf" },
-  { title: "Introduction to Generative AI", issuer: "Microsoft",       year: 2025, provider: "ai", file: "certificates/ai-generative.pdf" },
-  { title: "Responsible AI",                issuer: "Microsoft",       year: 2025, provider: "ai", file: "certificates/ai-responsible.pdf" },
-  { title: "Machine Learning Basics",       issuer: "Microsoft",       year: 2025, provider: "ai", file: "certificates/ai-ml-basics.pdf" },
-  { title: "AI for Business",               issuer: "Microsoft",       year: 2025, provider: "ai", file: "certificates/ai-for-business.pdf" },
-  { title: "Prompt Engineering Essentials", issuer: "Microsoft",       year: 2025, provider: "ai", file: "certificates/ai-prompt-engineering.pdf" },
-  { title: "Azure AI Services",             issuer: "Microsoft",       year: 2025, provider: "ai", file: "certificates/ai-azure-services.pdf" },
+  { title: "Generative AI", issuer: "Microsoft",       year: 2025, provider: "ai", file: "certificates/generative AI.pdf" },
+  { title: "Responsible AI",                issuer: "Microsoft",       year: 2025, provider: "ai", file: "certificates/responsible ai.pdf" },
+  { title: "Microsoft Copilot",       issuer: "Microsoft",       year: 2025, provider: "ai", file: "certificates/microsoft copilot ai" },
+  // { title: "AI for Business",               issuer: "Microsoft",       year: 2025, provider: "ai", file: "certificates/ai-for-business.pdf" },
+  // { title: "Prompt Engineering Essentials", issuer: "Microsoft",       year: 2025, provider: "ai", file: "certificates/ai-prompt-engineering.pdf" },
+  // { title: "Azure AI Services",             issuer: "Microsoft",       year: 2025, provider: "ai", file: "certificates/ai-azure-services.pdf" },
 
   { title: "Cybersecurity Essentials",      issuer: "Cisco Networking Academy", year: 2023, provider: "cisco", file: "certificates/cisco-cybersecurity-essentials.pdf" },
-  { title: "Introduction to Cybersecurity", issuer: "Cisco Networking Academy", year: 2023, provider: "cisco", file: "certificates/cisco-intro-cybersecurity.pdf" },
-  { title: "Networking Basics",             issuer: "Cisco Networking Academy", year: 2023, provider: "cisco", file: "certificates/cisco-networking-basics.pdf" },
-  { title: "Python Essentials 1",           issuer: "Cisco Networking Academy", year: 2024, provider: "cisco", file: "certificates/cisco-python-essentials-1.pdf" },
-  { title: "Python Essentials 2",           issuer: "Cisco Networking Academy", year: 2024, provider: "cisco", file: "certificates/cisco-python-essentials-2.pdf" },
+  { title: "Get Connected", issuer: "Cisco Networking Academy", year: 2023, provider: "cisco", file: "certificates/Get_Connected_cisco.pdf" },
+  { title: "Introduction to Packet Tracer",issuer: "Cisco Networking Academy", year: 2023, provider: "cisco", file: "certificates/Introduction_to_Packet_Tracer_cisco.pdf" },
+  // { title: "Python Essentials 1",           issuer: "Cisco Networking Academy", year: 2024, provider: "cisco", file: "certificates/LSTSOTETSI-Get Connected En-cisco.pdf" },
+  { title: "Partner: NDG Linux Unhatched",issuer: "Cisco Networking Academy", year: 2024, provider: "cisco", file: "certificates/Partner-_NDG_Linux_Unhatched_cisco.pdf" },
 
   { title: "Full Stack Development", issuer: "FNB App Academy", year: 2025, provider: "fnb", file: "certificates/fnb-full-stack-development.pdf" }
 ];
