@@ -12,7 +12,7 @@ var CERT_FOLDER = "certificates";
 /* ---------- PROJECTS ---------- */
 var PROJECTS = [
    { title: "Smart Shopper", type: "web application",
-    description: "My second software development project \u2013 a smart shopping assistant with price comparison and list management.",
+    description: "A smart shopping assistant that helps students plan budgets and compare prices across groceries, cosmetics, electronics, and stationery.Uses the LoyaltyHub API and AI to recommend cheaper alternatives when a selected product is more expensive.",
     tags: ["Python", "Flask", "Railway"], live: "https://smartshopper-production-0fd7.up.railway.app/",
     code: "https://github.com/lebakasamson5-beep/smartshopper", image: "images/smart-shopper.png" },
    
