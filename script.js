@@ -13,7 +13,7 @@ var CERT_FOLDER = "certificates";
 var PROJECTS = [
   { title: "Albert Park Pharmacy System", type: "Web application",
     description: "A web-based pharmacy management system with features that support pharmacy operations and information management.",
-    tags: ["HTML", "C#", "Azure"], live: "https://albert-park-pharmacy.azurewebsites.net",
+    tags: ["HTML", "C#", "Azure","sql database"], live: "https://albert-park-pharmacy.azurewebsites.net",
     code: "https://github.com/lebakasamson5-beep/albert-park-pharmacy", image: "images/pharmacy.png" },
   { title: "Rapid Guard", type: "Mobile application",
     description: "A Flutter mobile app with features for security and emergency activities, including the interface and core functionality.",
@@ -25,12 +25,16 @@ var PROJECTS = [
     code: "https://github.com/HopewellA1/wastewise", image: "images/waste-wise.png" },
   { title: "Haba K Shop", type: "Shop management system",
     description: "A shop management system to manage products, sales, stock and daily shop operations.",
-    tags: ["flutter", "Dart", "Firebase"], live: "https://habak-shop.railway.app",
+    tags: ["flutter", "Dart", "Firebase"], live: "https://github.com/lebakasamson5-beep/Haba--k/blob/main/apk/app-release.apk",
     code: "https://github.com/lebakasamson5-beep/Haba--K", image: "images/haba-k-shop.png" },
   { title: "Smart Shopper", type: "Software project",
     description: "My second software development project \u2013 a smart shopping assistant with price comparison and list management.",
     tags: ["Python", "Flask", "Railway"], live: "https://smartshopper-production-0fd7.up.railway.app/",
-    code: "https://github.com/lebakasamson5-beep/smartshopper", image: "images/smart-shopper.png" }
+    code: "https://github.com/lebakasamson5-beep/smartshopper", image: "images/smart-shopper.png" },
+    { title: "ParkingFinder", type: "Mobile application",
+    description: "A mobile application that helps users find available parking spaces quickly and conveniently.",
+    tags: ["Flutter", "Dart", "Firebase"], live: "https://github.com/Saziso040831/ParkingFinder/blob/main/apk/app-release.apk",
+    code: "https://github.com/Saziso040831/ParkingFinder", image: "images/smart-parkeringfinder.png" }
 ];
 
 /* ---------- QUALIFICATIONS (formal academic; shown only in the Qualifications section) ---------- */
