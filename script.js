@@ -1,20 +1,10 @@
 /* ==========================================================
    EDIT YOUR CONTENT HERE
-   ==========================================================
-   PROJECTS:
-     - Put your images in the /images folder and reference them
-       here (e.g. "images/pharmacy.png")
-     - `live` = live website link OR mobile app release (.apk) link
-     - `code` = GitHub repo link
-     - Leave "" to hide a button.
-
-   CERTIFICATES:
-     - Put your PDF/JPG/PNG files in the /certificates folder
-     - Set `file` to the full name WITH extension
    ========================================================== */
 
 var ROLES = ["Applications Developer", "Web and Mobile Builder", "Cybersecurity Enthusiast", "Problem Solver"];
 
+/* ---------- PROJECTS ---------- */
 var PROJECTS = [
   {
     title: "Albert Park Pharmacy System",
@@ -63,12 +53,43 @@ var PROJECTS = [
   }
 ];
 
+/* ---------- QUALIFICATIONS (formal academic) ---------- */
+var QUALIFICATIONS = [
+  {
+    title: "Diploma in ICT, Applications Development",
+    issuer: "Durban University of Technology",
+    year: 2025,
+    note: "Completed with 67%",
+    file: "certificates/dut-diploma.pdf"
+  }
+];
+
+/* ---------- CERTIFICATES (categorized) ---------- */
 var CERTIFICATES = [
-  { title: "Cybersecurity Essentials", issuer: "Cisco Networking Academy", year: 2023, file: "certificates/cisco-cybersecurity-essentials.pdf" },
-  { title: "Full Stack Development", issuer: "FNB App Academy", year: 2025, file: "certificates/fnb-full-stack-development.pdf" },
-  { title: "AI and Accessibility", issuer: "Microsoft / Durban University of Technology", year: 2025, file: "certificates/ai-and-accessibility.pdf" },
-  { title: "AI Fundamentals", issuer: "Microsoft / Durban University of Technology", year: 2025, file: "certificates/ai-fundamentals.pdf" },
-  { title: "Diploma in ICT, Applications Development", issuer: "Durban University of Technology", year: 2025, file: "certificates/dut-diploma.pdf" }
+  /* ---- MTN (3) ---- */
+  { title: "MTN Skills Academy – Digital Skills",       issuer: "MTN", year: 2025, provider: "mtn", file: "certificates/mtn-digital-skills.pdf" },
+  { title: "MTN Skills Academy – Data Analytics",       issuer: "MTN", year: 2025, provider: "mtn", file: "certificates/mtn-data-analytics.pdf" },
+  { title: "MTN Skills Academy – Cybersecurity Basics", issuer: "MTN", year: 2025, provider: "mtn", file: "certificates/mtn-cybersecurity-basics.pdf" },
+
+  /* ---- AI (8) ---- */
+  { title: "AI and Accessibility",          issuer: "Microsoft / DUT", year: 2025, provider: "ai", file: "certificates/ai-and-accessibility.pdf" },
+  { title: "AI Fundamentals",               issuer: "Microsoft / DUT", year: 2025, provider: "ai", file: "certificates/ai-fundamentals.pdf" },
+  { title: "Introduction to Generative AI", issuer: "Microsoft",       year: 2025, provider: "ai", file: "certificates/ai-generative.pdf" },
+  { title: "Responsible AI",                issuer: "Microsoft",       year: 2025, provider: "ai", file: "certificates/ai-responsible.pdf" },
+  { title: "Machine Learning Basics",       issuer: "Microsoft",       year: 2025, provider: "ai", file: "certificates/ai-ml-basics.pdf" },
+  { title: "AI for Business",               issuer: "Microsoft",       year: 2025, provider: "ai", file: "certificates/ai-for-business.pdf" },
+  { title: "Prompt Engineering Essentials", issuer: "Microsoft",       year: 2025, provider: "ai", file: "certificates/ai-prompt-engineering.pdf" },
+  { title: "Azure AI Services",             issuer: "Microsoft",       year: 2025, provider: "ai", file: "certificates/ai-azure-services.pdf" },
+
+  /* ---- CISCO (5) ---- */
+  { title: "Cybersecurity Essentials",      issuer: "Cisco Networking Academy", year: 2023, provider: "cisco", file: "certificates/cisco-cybersecurity-essentials.pdf" },
+  { title: "Introduction to Cybersecurity", issuer: "Cisco Networking Academy", year: 2023, provider: "cisco", file: "certificates/cisco-intro-cybersecurity.pdf" },
+  { title: "Networking Basics",             issuer: "Cisco Networking Academy", year: 2023, provider: "cisco", file: "certificates/cisco-networking-basics.pdf" },
+  { title: "Python Essentials 1",           issuer: "Cisco Networking Academy", year: 2024, provider: "cisco", file: "certificates/cisco-python-essentials-1.pdf" },
+  { title: "Python Essentials 2",           issuer: "Cisco Networking Academy", year: 2024, provider: "cisco", file: "certificates/cisco-python-essentials-2.pdf" },
+
+  /* ---- FNB (1) ---- */
+  { title: "Full Stack Development", issuer: "FNB App Academy", year: 2025, provider: "fnb", file: "certificates/fnb-full-stack-development.pdf" }
 ];
 
 /* ==========================================================
@@ -123,10 +144,11 @@ var CERTIFICATES = [
   var track = document.getElementById("marquee");
   tech.concat(tech).forEach(function (t) { track.appendChild(el("span", "", t)); });
 
-  /* Projects */
+  /* Stats */
   document.getElementById("stat-projects").setAttribute("data-count", PROJECTS.length);
   document.getElementById("stat-certs").setAttribute("data-count", CERTIFICATES.length);
 
+  /* Projects */
   var projectGrid = document.getElementById("project-grid");
   PROJECTS.forEach(function (p, i) {
     var card = el("article", "card project reveal");
@@ -164,27 +186,79 @@ var CERTIFICATES = [
     projectGrid.appendChild(card);
   });
 
-  /* Certificates */
-  var certGrid = document.getElementById("cert-grid");
-  CERTIFICATES.forEach(function (c, i) {
+  /* Qualifications */
+  var qualGrid = document.getElementById("qual-grid");
+  QUALIFICATIONS.forEach(function (q, i) {
     var card = el("button", "card cert reveal");
     card.type = "button";
     card.style.setProperty("--d", (i * 0.12) + "s");
-    card.appendChild(el("span", "icon", "\uD83C\uDF93"));
-    card.appendChild(el("p", "meta", String(c.year)));
-    card.appendChild(el("h3", "", c.title));
-    card.appendChild(el("p", "", c.issuer));
-    card.appendChild(el("span", "view", "View certificate \u2192"));
-    card.addEventListener("click", function () { openCertificate(c); });
-    certGrid.appendChild(card);
+    card.appendChild(el("span", "icon", "\uD83C\uDF96\uFE0F"));
+    card.appendChild(el("p", "meta", String(q.year)));
+    card.appendChild(el("h3", "", q.title));
+    card.appendChild(el("p", "", q.issuer + (q.note ? " \u2014 " + q.note : "")));
+    card.appendChild(el("span", "view", "View qualification \u2192"));
+    card.addEventListener("click", function () { openCertificate(q); });
+    qualGrid.appendChild(card);
   });
+
+  /* Certificates with filtering */
+  var certGrid = document.getElementById("cert-grid");
+  var filterButtons = document.querySelectorAll(".filter-btn");
+
+  function renderCertificates(provider) {
+    clear(certGrid);
+    var list = CERTIFICATES.filter(function (c) { return c.provider === provider; });
+    if (!list.length) {
+      certGrid.appendChild(el("div", "cert-empty",
+        "No certificates in this category yet. Check back soon \u2014 I am still uploading them."));
+      return;
+    }
+    list.forEach(function (c, i) {
+      var card = el("button", "card cert");
+      card.type = "button";
+      card.style.setProperty("--d", (i * 0.12) + "s");
+      var tag = el("span", "provider-tag", c.provider.toUpperCase());
+      tag.setAttribute("data-p", c.provider);
+      card.appendChild(tag);
+      card.appendChild(el("span", "icon", "\uD83C\uDF93"));
+      card.appendChild(el("p", "meta", String(c.year)));
+      card.appendChild(el("h3", "", c.title));
+      card.appendChild(el("p", "", c.issuer));
+      card.appendChild(el("span", "view", "View certificate \u2192"));
+      card.addEventListener("click", function () { openCertificate(c); });
+      certGrid.appendChild(card);
+    });
+  }
+
+  filterButtons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      filterButtons.forEach(function (b) {
+        b.classList.remove("active");
+        b.setAttribute("aria-selected", "false");
+      });
+      btn.classList.add("active");
+      btn.setAttribute("aria-selected", "true");
+      renderCertificates(btn.getAttribute("data-filter"));
+    });
+  });
+
+  /* Update counts on filter buttons */
+  filterButtons.forEach(function (btn) {
+    var p = btn.getAttribute("data-filter");
+    var count = CERTIFICATES.filter(function (c) { return c.provider === p; }).length;
+    var countEl = btn.querySelector(".count");
+    if (countEl) countEl.textContent = count;
+  });
+
+  /* Default tab = MTN */
+  renderCertificates("mtn");
 
   /* Chip stagger */
   document.querySelectorAll(".chips").forEach(function (ul) {
     Array.prototype.forEach.call(ul.children, function (li, i) { li.style.setProperty("--c", i); });
   });
 
-  /* 3D tilt */
+  /* 3D tilt on cards */
   if (fine && !reduce) {
     document.querySelectorAll(".card").forEach(function (card) {
       card.addEventListener("mousemove", function (e) {
@@ -245,7 +319,7 @@ var CERTIFICATES = [
     counters.forEach(countUp);
   }
 
-  /* Scroll progress + top */
+  /* Scroll progress */
   var bar = document.getElementById("progress");
   var topBtn = document.getElementById("top");
   function onScroll() {
@@ -269,7 +343,7 @@ var CERTIFICATES = [
     setIcon();
   });
 
-  /* Hero canvas */
+  /* Hero canvas network */
   var canvas = document.getElementById("net");
   if (canvas.getContext && !reduce) {
     var ctx = canvas.getContext("2d");
